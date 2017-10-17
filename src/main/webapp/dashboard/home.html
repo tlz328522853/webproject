@@ -12,17 +12,17 @@
 						class="label bg-info m-l-xs" ng-if="item.authorName==username">Delete</label> <span
 						class="text-muted m-l-sm pull-right"> <i
 						class="fa fa-clock-o"></i> {{item.date|date:
-						'shortTime'}}&nbsp;&nbsp;{{item.date|date:'mediumDate' }}
+						'yyyy-mm-ss'}}&nbsp;&nbsp;{{item.date|date:'yyyy-mm-ss' }}
 					</span>
 				</div>
 				<div class="panel-body">
 					<div class="">
 						{{item.likes}} <a class="btn btn-default btn-xs" ng-click="likeOrNot(item.id,item.liked=!item.liked)"> <i
 							class="fa fa-star-o text-muted" ng-if="!item.liked"></i> <i
-							class="fa fa-star text-danger" ng-if="item.liked"></i> Like
+							class="fa fa-star text-danger" ng-if="item.liked"></i>点赞
 						</a> <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#replyModal" ng-click="setReplyPostId(item.id)"> <i
 							class="fa fa-mail-reply text-muted" ></i>
-							Reply
+							评论
 						</a>
 					</div>
 				</div>
@@ -52,10 +52,10 @@
 			<form class="m-b-none">
 				<div class="input-group">
 					<input type="text" class="form-control input-lg"
-						ng-model="post.content" placeholder="Input your post here">
+						ng-model="post.content" placeholder="交友 宣言">
 					<span class="input-group-btn">
 						<button class="btn btn-info btn-lg" type="button"
-							ng-click="addPost()">POST</button>
+							ng-click="addPost()">提交</button>
 					</span>
 				</div>
 			</form>
@@ -71,7 +71,7 @@
 					cancel
 				</button>
 				 <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal" aria-hidden="true" style="float:right;" ng-click="addComment()">
-					send
+					发送
 				</button>
 			</div>
 			<div class="modal-body">

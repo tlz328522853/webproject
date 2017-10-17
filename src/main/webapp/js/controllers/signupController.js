@@ -13,7 +13,7 @@ app.controller('signupCtrl',function ($rootScope,$scope,$resource,$location) {
             $rootScope.user.name=$scope.user.name;
 			$location.path("/signin");
         }, function (data) {
-        	alert("signup faliure");
+        	alert("注册 失败！");
         });
     };
     

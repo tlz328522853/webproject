@@ -35,7 +35,12 @@ public class UserController {
 	@ResponseBody
 	@RequestMapping(value="/new",method=RequestMethod.POST)
 	public ResponseData insert(@RequestBody User user){
-		userService.insert(user);
+		try {
+			userService.insert(user);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new ResponseData(user);
 	}
 	
